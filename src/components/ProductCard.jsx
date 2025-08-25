@@ -3,22 +3,19 @@ import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-      <div className="relative pb-2/3">
-        <img 
-          src={product.image} 
-          alt={product.name} 
-          className="w-full h-64 object-contain"
-        />
-      </div>
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <img 
+        src={product.image} 
+        alt={product.name} 
+        className="w-full h-48 object-cover"
+      />
       <div className="p-4">
-        <h3 className="text-2xl font-bold text-gray-900">{product.name}</h3>
-        <p className="mt-2 text-gray-600">{product.description}</p>
-        <div className="mt-4 flex justify-between items-center">
-          <span className="text-xl font-semibold text-pink-500">${product.price}</span>
+        <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
+        <p className="text-gray-600 mb-4">{product.description}</p>
+        <div className="flex justify-between items-center">
           <Link 
             to={`/producto/${product.id}`} 
-            className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors"
+            className="bg-[#795c8c] text-white py-1 px-4 rounded-full hover:bg-[#795c8c] transition duration-300"
           >
             Ver detalles
           </Link>

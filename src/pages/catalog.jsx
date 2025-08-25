@@ -7,53 +7,100 @@ const productData = [
     id: 1,
     name: "Queso Bocadillo",
     description: "Helado artesanal de mascarpone con dulce de guayaba",
-    price: "4.99",
-    image: "/images/queso-bocadillo.png", // Asegúrate de guardar la imagen en la carpeta public/images
+    image: "/images/artesanales/queso-bocadillo-1.jpg", // Asegúrate de guardar la imagen en la carpeta public/images
     category: "Especialidades"
   },
   {
     id: 2,
-    name: "Fresa Silvestre",
-    description: "Helado cremoso con trozos de fresas naturales",
+    name: "Brownie",
+    description: "Helado cremoso con trozos de brownie",
     price: "4.50",
-    image: "/images/placeholder.png",
-    category: "Frutales"
+    image: "/images/artesanales/brownie-3.jpg",
+    category: "Chocolates"
   },
   {
     id: 3,
-    name: "Chocolate Belga",
-    description: "Intenso sabor a chocolate premium belga",
+    name: "Chocolate",
+    description: "Intenso sabor a chocolate premium",
     price: "5.25",
-    image: "/images/placeholder.png",
+    image: "/images/artesanales/chocolate-1.jpg",
     category: "Chocolates"
   },
   {
     id: 4,
-    name: "Pistacho Siciliano",
-    description: "Elaborado con pistachos de Sicilia tostados",
+    name: "Coco",
+    description: "Elaborado con trozos de coco",
     price: "5.99",
-    image: "/images/placeholder.png",
-    category: "Frutos Secos"
+    image: "/images/artesanales/coco-1.jpg",
+    category: "Frutales"
   },
   {
     id: 5,
-    name: "Tiramisú",
-    description: "Helado con auténtico sabor a tiramisú italiano",
+    name: "Cookies",
+    description: "Helado con auténtico sabor a cookies and cream",
     price: "5.50",
-    image: "/images/placeholder.png",
+    image: "/images/artesanales/cookies-1.jpg",
     category: "Especialidades"
   },
   {
     id: 6,
-    name: "Limón Siciliano",
-    description: "Refrescante sorbete de limones sicilianos",
+    name: "Frutos Amarillos",
+    description: "Refrescante helado con trozos de frutos amarillos",
     price: "4.25",
-    image: "/images/placeholder.png",
-    category: "Sorbetes"
+    image: "/images/artesanales/frutos-amarillos-1.jpg",
+    category: "Frutales"
+  },
+  {
+    id: 7,
+    name: "Frutos Rojos",
+    description: "Refrescante helado con trozos de frutos rojos deliciosos",
+    price: "4.25",
+    image: "/images/artesanales/frutos-rojos-1.jpg",
+    category: "Frutales"
+  },
+  {
+    id: 8,
+    name: "Guanabana",
+    description: "Refrescante helado con trozos de guanabana",
+    price: "4.25",
+    image: "/images/artesanales/guanabana-1.jpg",
+    category: "Frutales"
+  },
+  {
+    id: 9,
+    name: "Mango Biche",
+    description: "Refrescante helado y delicioso con trozos de mango biche",
+    price: "4.25",
+    image: "/images/artesanales/mango-biche-4.jpg",
+    category: "Frutales"
+  },
+  {
+    id: 10,
+    name: "Queso Arequipe",
+    description: "Helado artesanal de mascarpone con arequipe",
+    price: "4.25",
+    image: "/images/artesanales/queso-arequipe-1.jpg",
+    category: "Especialidades"
+  },
+  {
+    id: 11,
+    name: "Queso Mora",
+    description: "Helado artesanal de mascarpone con dulce de mora",
+    price: "4.25",
+    image: "/images/artesanales/queso-mora-1.jpg",
+    category: "Especialidades"
+  },
+  {
+    id: 12,
+    name: "Yogurt Amarenas",
+    description: "Helado artesanal de yogurt con trozos y dulce de amarenas",
+    price: "4.25",
+    image: "/images/artesanales/yogurt-amarenas-1.jpg",
+    category: "Especialidades"
   }
 ];
 
-const Catalog = () => {
+const Productos = () => {
   const [selectedCategory, setSelectedCategory] = useState('Todos');
   
   // Extraer categorías únicas para el filtro
@@ -77,7 +124,7 @@ const Catalog = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full ${
                 selectedCategory === category 
-                  ? 'bg-pink-500 text-white' 
+                  ? 'bg-[#795c8c] text-white' 
                   : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
               }`}
             >
@@ -97,4 +144,4 @@ const Catalog = () => {
   );
 };
 
-export default Catalog;
+export default Productos;

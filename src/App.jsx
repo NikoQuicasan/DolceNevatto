@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Catalog from './pages/catalog';
+import Productos from './pages/catalog';
+import logo from './assets/logos/logo.png';
 import ProductDetail from './pages/ProductDetail';
 
 const Header = () => {
@@ -10,32 +11,25 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-pink-500">Dolce Nevatto</span>
+              <img src={logo} alt="Dolce Nevatto" className="h-10" />
             </Link>
           </div>
           <nav>
             <ul className="flex space-x-6">
               <li>
-                <Link to="/" className="font-medium text-gray-700 hover:text-pink-500">Inicio</Link>
+                <Link to="/" className="font-medium text-gray-700 hover:text-[#795c8c]">Inicio</Link>
               </li>
               <li>
-                <Link to="/catalogo" className="font-medium text-gray-700 hover:text-pink-500">Catálogo</Link>
+                <Link to="/catalogo" className="font-medium text-gray-700 hover:text-[#795c8c]">Catálogo</Link>
               </li>
               <li>
-                <Link to="/nosotros" className="font-medium text-gray-700 hover:text-pink-500">Nosotros</Link>
+                <Link to="/nosotros" className="font-medium text-gray-700 hover:text-[#795c8c]">Nosotros</Link>
               </li>
               <li>
-                <Link to="/contacto" className="font-medium text-gray-700 hover:text-pink-500">Contacto</Link>
+                <Link to="/contacto" className="font-medium text-gray-700 hover:text-[#795c8c]">Contacto</Link>
               </li>
             </ul>
           </nav>
-          <div className="flex items-center space-x-4">
-            <Link to="/carrito" className="text-gray-700 hover:text-pink-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            </Link>
-          </div>
         </div>
       </div>
     </header>
@@ -64,9 +58,9 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contacto</h3>
               <ul className="space-y-2">
-                <li className="text-gray-300">info@dolcenevatto.com</li>
-                <li className="text-gray-300">+1 (123) 456-7890</li>
-                <li className="text-gray-300">Avenida Principal 123</li>
+                <li className="text-gray-300">Nevados.col@gmail.com</li>
+                <li className="text-gray-300"></li>
+                <li className="text-gray-300">Castilla</li>
               </ul>
             </div>
             <div className="col-span-2 md:col-span-1">
@@ -109,8 +103,8 @@ function App() {
         <Header />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Catalog />} />
-            <Route path="/catalogo" element={<Catalog />} />
+            <Route path="/" element={<Productos />} />
+            <Route path="/productos" element={<Productos />} />
             <Route path="/producto/:id" element={<ProductDetail />} />
             {/* Añadir más rutas según sea necesario */}
           </Routes>
