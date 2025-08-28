@@ -1,0 +1,34 @@
+name: 🚀 Deploy React App to GoDaddy
+
+on:
+  push:
+    branches:
+      - master   # usa "main" si tu rama principal se llama así
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GoDaddy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}   # = 120.123.120
+          username: ${{ secrets.FTP_USER }}   # = deploy@tudominio.com
+          password: ${{ secrets.FTP_PASS }}   # = tuContraseñaSegura123
+          local-dir: ./build                  # React genera el build aquí
+          server-dir: ${{ secrets.FTP_PATH }} # = /public_html/
