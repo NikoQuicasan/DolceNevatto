@@ -1,9 +1,9 @@
-name: 🚀 Deploy React App to GoDaddy
+name: Build and Deploy
 
 on:
   push:
     branches:
-      - master   # usa "main" si tu rama principal se llama así
+      - main   # cambia si usas otra rama (ej: master)
 
 jobs:
   build-and-deploy:
@@ -11,17 +11,17 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build project
+      - name: Build project (Vite)
         run: npm run build
 
       - name: Deploy to GoDaddy via FTP
@@ -30,5 +30,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: ./build/      # 👈 aquí va la carpeta de salida
+          local-dir: ./dist   # Vite genera 'dist'
           server-dir: ${{ secrets.FTP_PATH }}
