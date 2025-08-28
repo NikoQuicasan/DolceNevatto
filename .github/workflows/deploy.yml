@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master   # Cambia si tu rama es distinta
+      - master   # o "main" según tu repo
 
 jobs:
   build-and-deploy:
@@ -19,17 +19,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project (Vite)
         run: npm run build
-
-      - name: Verify dist exists
-        run: |
-          if [ ! -d "dist" ]; then
-            echo "❌ Error: carpeta 'dist' no encontrada después del build"
-            exit 1
-          fi
 
       - name: Deploy to GoDaddy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.3
@@ -37,5 +30,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: dist/
+          local-dir: dist/        # 👈 OJO: sin "./" ni ".zip"
           server-dir: ${{ secrets.FTP_PATH }}
