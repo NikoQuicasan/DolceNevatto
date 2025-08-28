@@ -27,8 +27,8 @@ jobs:
       - name: Deploy to GoDaddy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.3
         with:
-          server: ${{ secrets.FTP_SERVER }}   # = 120.123.120
-          username: ${{ secrets.FTP_USER }}   # = deploy@tudominio.com
-          password: ${{ secrets.FTP_PASS }}   # = tuContraseñaSegura123
-          local-dir: ./build                  # React genera el build aquí
-          server-dir: ${{ secrets.FTP_PATH }} # = /public_html/
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./build
+          server-dir: ${{ secrets.FTP_PATH }}
