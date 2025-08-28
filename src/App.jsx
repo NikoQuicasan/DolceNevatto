@@ -17,7 +17,7 @@ const Header = () => {
           <nav>
             <ul className="flex space-x-6">
               <li>
-                <Link to="/" className="font-medium text-gray-700 hover:text-[#795c8c]">Inicios</Link>
+                <Link to="/" className="font-medium text-gray-700 hover:text-[#795c8c]">Inicioss</Link>
               </li>
               <li>
                 <Link to="/catalogo" className="font-medium text-gray-700 hover:text-[#795c8c]">Catálogo</Link>
