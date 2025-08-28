@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-6 md:mb-0">
             <h2 className="text-xl font-bold">Dolce Nevatto</h2>
-            <p className="mt-2 text-gray-300">Los mejores helados artesanales</p>
+            <p className="mt-2 text-gray-300">Los mejores helados deliciosos artesanales</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
